@@ -6,27 +6,28 @@ class MyArray
   end
 
   def size
-    # TODO
+    @array.count
   end
 
   def reverse
-    # TODO
+    @array.reverse!
   end
 
   def max
-    # TODO
+    @array.max
   end
 
   def min
-    # TODO
+    @array.min
   end
 
   def desc
-    # TODO
+    @array.sort_by!(&:to_i)
+    @array.reverse!
   end
 
   def asc
-    # TODO
+    @array.sort_by!(&:to_i)
   end
 
   def odd
@@ -38,7 +39,7 @@ class MyArray
   end
 
   def uniq
-    # TODO
+    @array.uniq!
   end
 
   def devide_on_ten
@@ -58,6 +59,7 @@ class MyArray
   end
 
   def three_smallest
-    # TODO
+    @array.sort_by!(&:to_i)
+    @array.take(3)
   end
 end

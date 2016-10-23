@@ -61,7 +61,8 @@ class MyArray
   end
 
   def chars
-    # TODO
+    alp = @array.map{ |i| (i + 9).to_s 36}
+    # alp.map.with_index{ |x, i| i + 1 }
   end
 
   def chars_with_arg (arr = [])

@@ -3,6 +3,7 @@ class MyArray
 
   def initialize(arr = [])
     @array = arr
+    @break_each = 1
   end
 
   def size
@@ -70,36 +71,23 @@ class MyArray
     arr.map { |ch| ch.ord - 'A'.ord + 1 }
   end
 
-  def switch
-    max_element = @array.max
-    min_element = @array.min
-
-    array2 = []
-    max_index = 0
-    min_index = 0
-
-    @array.each_with_index do |item, index|
-      if item == max_element
-        max_index = index
-      elsif item == max_element
-        min_index = index
-      end
-      array2.push(item)
-    end
-    array2[min_index] = max_element
-    array2[max_index] = min_element
-    array2
+  def c
+    min_index_value_array = @array.each_with_index.min
+    max_index_value_array = @array.each_with_index.max
+    result = @array
+    result[min_index_value_array[1]] = max_index_value_array[0]
+    result[max_index_value_array[1]] = min_index_value_array[0]
+    result
   end
 
   def before_min
     min_element = @array.min
     array2 = []
-    break_each = 1
     @array.each do |item|
-      if item != min_element && break_each == 1
+      if item != min_element && @break_each == 1
         array2.push(item)
       else
-        break_each = 0
+        @break_each = 0
       end
     end
     array2

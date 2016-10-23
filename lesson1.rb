@@ -23,7 +23,10 @@ class Lesson1
     end
     today = Date.today
     time_now = Time.now
+    return_result today, birthday_object, time_now, birthday_object_time
+  end
 
+  def return_result(today, birthday_object, time_now, birthday_object_time)
     "Я живу
     #{today.year - birthday_object.year} года или
     #{(today - birthday_object).to_i} дней или

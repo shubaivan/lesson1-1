@@ -7,13 +7,14 @@ class Lesson1
   end
 
   def age(birthday)
-    if birthday === nil
+    result = birthday.gsub(/[^\d]/, '')
+    if result === nil
       return 'Invalid Date Format'
     end
-    birthday_object = Date.parse(birthday)
+    birthday_object = Date.parse(result)
     today = Date.today
 
-    birthday_object_time = Time.new(birthday)
+    birthday_object_time = Time.new(result)
     time_now = Time.now
     time_stamp = time_now - birthday_object_time
 

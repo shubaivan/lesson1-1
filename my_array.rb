@@ -94,7 +94,18 @@ class MyArray
   end
 
   def before_min
-    # TODO
+    min_element = @array.min
+    array2 = []
+    break_each = 1
+
+    @array.each do |item|
+      if (item != min_element && break_each === 1) then
+        array2.push(item)
+      else
+        break_each = 0
+      end
+    end
+    array2
   end
 
   def three_smallest

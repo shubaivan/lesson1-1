@@ -7,17 +7,24 @@ class Lesson1
   end
 
   def age(birthday)
-    if birthday.is_a?(Array)
+    # if birthday.is_a?(Array)
+    #   return 'Invalid Date Format'
+    # end
+    # if birthday === nil
+    #   return 'Invalid Date Format'
+    # end
+
+    begin
+      birthday_object = Date.parse(birthday)
+    rescue => e
       return 'Invalid Date Format'
     end
-    if birthday === nil
-      return 'Invalid Date Format'
-    end
-    result = birthday.gsub(/[^\d\\\/]/, '')
-    birthday_object = Date.parse(result)
+
+    # result = birthday.gsub(/[^\d\\\/]/, '')
+    # birthday_object = Date.parse(result)
     today = Date.today
 
-    birthday_object_time = Time.new(result)
+    birthday_object_time = Time.new(birthday)
     time_now = Time.now
     time_stamp = time_now - birthday_object_time
 

@@ -45,7 +45,6 @@ class Lesson1
     puts'Отчество'
     put_second_name = gets.chomp
 
-
     "Hello #{put_name} #{put_last_name} #{put_second_name}!"
   end
 end

@@ -31,17 +31,17 @@ class MyArray
   end
 
   def odd
-    @array.select { |i| i.odd? }
+    @array.select(&:odd?)
   end
 
   def even
-    @array.select { |i| i.even? }
+    @array.select(&:even?)
   end
 
   def even_each
     array2 = []
     @array.each_with_index do |item|
-      if (item % 2).zero?
+      if item % 2.zero?
         array2.push(item)
       end
     end
@@ -62,7 +62,7 @@ class MyArray
 
   def chars
     alp = @array.map { |i| (i + 9).to_s 36 }
-    prepare_alp = alp.map { |i| i.to_sym }
+    prepare_alp = alp.map(&:to_sym)
     prepare_alp
     # alp.map.with_index{ |x, i| i + 1 }
   end

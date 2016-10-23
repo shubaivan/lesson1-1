@@ -31,11 +31,25 @@ class MyArray
   end
 
   def odd
-    # TODO
+    @array.select{|i| i.odd?}
+  end
+
+  def even
+    @array.select{|i| i.even?}
+  end
+
+  def even_each
+    array2 = []
+    @array.each_with_index do |item,index|
+      if (item %2 == 0) then
+        array2.push(item)
+      end
+    end
+    array2
   end
 
   def multiple_to_three
-    # TODO
+    @array.select{|i| i %3 == 0 }
   end
 
   def uniq
@@ -43,11 +57,18 @@ class MyArray
   end
 
   def devide_on_ten
-    # TODO
+    @array.collect { |x| (x.to_f/10) }
   end
 
   def chars
     # TODO
+  end
+
+  def chars_with_arg (arr = [])
+    if arr.any? === false
+      arr = @array
+    end
+    arr.map {|ch| ch.ord - 'A'.ord + 1}
   end
 
   def switch

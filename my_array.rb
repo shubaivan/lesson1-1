@@ -71,7 +71,7 @@ class MyArray
     arr.map { |ch| ch.ord - 'A'.ord + 1 }
   end
 
-  def c
+  def switch
     min_index_value_array = @array.each_with_index.min
     max_index_value_array = @array.each_with_index.max
     result = @array

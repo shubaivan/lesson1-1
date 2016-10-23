@@ -62,6 +62,8 @@ class MyArray
 
   def chars
     alp = @array.map{ |i| (i + 9).to_s 36}
+    prepare_alp = alp.map{ |i| i.to_sym}
+    prepare_alp
     # alp.map.with_index{ |x, i| i + 1 }
   end
 

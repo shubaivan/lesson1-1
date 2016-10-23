@@ -13,7 +13,7 @@ class Lesson1
     if birthday === nil
       return 'Invalid Date Format'
     end
-    result = birthday.gsub(/[^\d]/, '')
+    result = birthday.gsub(/[^\d\\\/]/, '')
     birthday_object = Date.parse(result)
     today = Date.today
 

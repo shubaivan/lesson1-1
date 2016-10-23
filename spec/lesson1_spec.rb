@@ -11,6 +11,7 @@ RSpec.describe Lesson1 do
   describe '#age' do
     it { expect(subject.age('03/05/1990')).to include('26') }
     it { expect(subject.age(nil)).to eql('Invalid Date Format') }
+    it { expect(subject.age([1, 2, 3])).to eql('Invalid Date Format') }
   end
 
   describe '#name' do

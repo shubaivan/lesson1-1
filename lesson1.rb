@@ -7,10 +7,13 @@ class Lesson1
   end
 
   def age(birthday)
-    result = birthday.gsub(/[^\d]/, '')
-    if result === nil
+    if birthday.is_a?(Array)
       return 'Invalid Date Format'
     end
+    if birthday === nil
+      return 'Invalid Date Format'
+    end
+    result = birthday.gsub(/[^\d]/, '')
     birthday_object = Date.parse(result)
     today = Date.today
 

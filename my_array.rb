@@ -41,9 +41,7 @@ class MyArray
   def even_each
     array2 = []
     @array.each_with_index do |item|
-      if item % 2.zero?
-        array2.push(item)
-      end
+      array2.push(item) if item % 2.zero?
     end
     array2
   end
@@ -68,9 +66,7 @@ class MyArray
   end
 
   def chars_with_arg(arr = [])
-    if arr.any? == false
-      arr = @array
-    end
+    arr = @array if arr.any? == false
     arr.map { |ch| ch.ord - 'A'.ord + 1 }
   end
 

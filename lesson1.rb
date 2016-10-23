@@ -7,6 +7,9 @@ class Lesson1
   end
 
   def age(birthday)
+    if birthday === nil
+      return 'Invalid Date Format'
+    end
     birthday_object = Date.parse(birthday)
     today = Date.today
 

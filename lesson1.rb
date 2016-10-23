@@ -2,7 +2,7 @@ require 'date'
 class Lesson1
   def sum(val = 0)
     y = 0
-    val.to_s.each_char{|x| y += x.to_i}
+    val.to_s.each_char { |x| y += x.to_i }
     y
   end
 
@@ -16,7 +16,7 @@ class Lesson1
 
     begin
       birthday_object = Date.parse(birthday)
-    rescue => e
+    rescue
       return 'Invalid Date Format'
     end
 

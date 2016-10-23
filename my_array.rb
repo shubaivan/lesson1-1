@@ -73,7 +73,24 @@ class MyArray
   end
 
   def switch
-    # TODO
+    max_element = @array.max
+    min_element = @array.min
+
+    array2 = []
+    max_index = 0
+    min_index = 0
+
+    @array.each_with_index do |item,index|
+      if (item == max_element) then
+        max_index = index
+      elsif (item == max_element) then
+        min_index = index
+      end
+      array2.push(item)
+    end
+    array2[min_index] = max_element
+    array2[max_index] = min_element
+    array2
   end
 
   def before_min
